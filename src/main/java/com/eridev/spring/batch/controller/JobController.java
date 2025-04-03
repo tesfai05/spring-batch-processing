@@ -23,7 +23,7 @@ public class  JobController {
     private Job job;
 
     @PostMapping("/customers/import")
-    public void importCsvToDBJob() {
+    public String  importCsvToDBJob() {
         JobParameters jobParameters = new JobParametersBuilder()
                 .addLong("startAt", System.currentTimeMillis()).toJobParameters();
         try {
@@ -31,5 +31,6 @@ public class  JobController {
         } catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException | JobParametersInvalidException e) {
             e.printStackTrace();
         }
+        return "Batch Process Completed.";
     }
 }
