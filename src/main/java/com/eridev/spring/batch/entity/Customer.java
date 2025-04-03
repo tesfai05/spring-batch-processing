@@ -15,7 +15,6 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Customer {
-
     @Id
     @Column(name = "CUSTOMER_ID")
     private int id;
@@ -33,6 +32,4 @@ public class Customer {
     private String country;
     @Column(name = "DOB")
     private String dob;
-
-
 }

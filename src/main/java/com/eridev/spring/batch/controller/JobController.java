@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/jobs")
-public class JobController {
+public class  JobController {
 
     @Autowired
     private JobLauncher jobLauncher;
     @Autowired
     private Job job;
 
-    @PostMapping("/importCustomers")
+    @PostMapping("/customers/import")
     public void importCsvToDBJob() {
         JobParameters jobParameters = new JobParametersBuilder()
                 .addLong("startAt", System.currentTimeMillis()).toJobParameters();
